@@ -129,5 +129,23 @@ namespace ProductReviewManagement
             IterateThroughList(res);
             return res.Count;
         }
+
+        /// <summary>
+        ///  UC7---->Retrieving the product id in list
+        /// </summary>
+        /// <param name="products"></param>
+        /// <returns></returns>
+        public static string AddingProductReview1(List<ProductReview> products)
+        {
+            string result = null;
+            AddingProductReview(products);
+            var res = products.Select(product => new { ProductId = product.productId, Review = product.review }).ToList();
+            foreach (var ele in res)
+            {
+                Console.WriteLine("ProductId " + ele.ProductId + " " + "Review " + " " + ele.Review);
+                result += ele.ProductId + " ";
+            }
+            return result;
+        }
     }
 }
