@@ -44,7 +44,9 @@ namespace ProductReviewManagement
                     
                     ProductReviewManager.AverageOfRating();
                     break;
-
+                case 11:
+                    ProductReviewManager.ReturnsReviewMessageContainsGood();
+                    break;
             }
         }
     }
