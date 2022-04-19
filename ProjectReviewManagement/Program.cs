@@ -47,6 +47,9 @@ namespace ProductReviewManagement
                 case 11:
                     ProductReviewManager.ReturnsReviewMessageContainsGood();
                     break;
+                case 12:
+                    ProductReviewManager.UserID(dataTable);
+                    break;
             }
         }
     }
