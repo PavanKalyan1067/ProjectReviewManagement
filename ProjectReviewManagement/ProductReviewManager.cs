@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using System.Data;
 
 namespace ProductReviewManagement
 {
@@ -146,6 +147,45 @@ namespace ProductReviewManagement
                 result += ele.ProductId + " ";
             }
             return result;
+        }
+        /// <summary>
+        /// UC8-->Using DataTable 
+        /// </summary>
+        /// <param name="products"></param>
+        public static int CreateDataTable(List<ProductReview> products)
+        {
+            AddingProductReview(products);
+            DataTable dt = new DataTable();
+            dt.Columns.Add("productId");
+            dt.Columns.Add("userId");
+            dt.Columns.Add("rating");
+            dt.Columns.Add("review");
+            dt.Columns.Add("isLike", typeof(bool));
+
+            foreach (var data in products)
+            {
+                dt.Rows.Add(data.productId, data.userId, data.rating, data.review, data.isLike);
+            }
+            //IterateTable(dt);
+            int c = ReturnsOnlyIsLikeFieldAsTrue(dt);
+            return c;
+        }
+
+        private static int ReturnsOnlyIsLikeFieldAsTrue(DataTable dt)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Iterate Thorugh Table
+        /// </summary>
+        /// <param name="table"></param>
+        public static void IterateTable(DataTable table)
+        {
+            foreach (DataRow p in table.Rows)
+            {
+                Console.WriteLine("{0} | {1} | {2} | {3} | {4} ", p["productId"], p["userId"], p["rating"], p["review"], p["isLike"]);
+            }
         }
     }
 }

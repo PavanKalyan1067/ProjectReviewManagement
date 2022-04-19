@@ -37,6 +37,9 @@ namespace ProductReviewManagement
                 case 7:
                     ProductReviewManager.AddingProductReview1(productReviews);
                     break;
+                case 8:
+                    ProductReviewManager.CreateDataTable(productReviews);
+                    break;
 
             }
         }
