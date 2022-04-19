@@ -40,6 +40,11 @@ namespace ProductReviewManagement
                 case 8:
                     ProductReviewManager.CreateDataTable(productReviews);
                     break;
+                case 10:
+                    
+                    ProductReviewManager.AverageOfRating();
+                    break;
+
             }
         }
     }
