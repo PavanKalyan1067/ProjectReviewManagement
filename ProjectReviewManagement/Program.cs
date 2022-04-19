@@ -40,7 +40,6 @@ namespace ProductReviewManagement
                 case 8:
                     ProductReviewManager.CreateDataTable(productReviews);
                     break;
-
             }
         }
     }
